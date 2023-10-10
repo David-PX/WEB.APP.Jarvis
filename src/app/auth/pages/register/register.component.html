@@ -1,0 +1,64 @@
+<div class="row height-100">
+    <div class="col-md-6 d-none d-md-block d-flex justify-content-end height-100">
+       <img src="./../../../../assets/auth/05.png" class="w-100 h-100" alt="imglogin">
+    </div>
+
+    <div class="col-md-6 p-5">
+
+        <div class="login-start p-5">
+            <form [formGroup]="registerForm" (ngSubmit)="onSave()" class="p-5">
+               <div class="text-start d-flex align-items-center">
+                  <a  class="navbar-brand primary mb-5" href="#">
+                     <img
+                        src="./../../../favicon.svg"
+                        alt=""
+                        width="60"
+                        height="60"
+                     />
+                     <h3 class="d-inline">Jarvis</h3> 
+                     <!-- <h1 class="text-white">Logo</h1> -->
+                     </a>
+               </div>
+
+               <ng-container *ngIf="!showSentMessageConfirmationMessage; else confirmationMessage" class="p-5">
+                     <div class="text-center">
+                        <h2>Register</h2>
+                     </div>
+                     <div class="mb-3">
+                        <label for="txtEmail" class="form-label ">Type your email</label>
+                        <input type="email" class="form-control border-primary" id="txtEmail" formControlName="email" aria-describedby="emailHelp">
+
+                        <span *ngIf="isValidField('email')" class="form-text text-danger">
+                           <!-- Debe de ser de 3 letras -->
+                           {{getFieldError('email')}}
+                     </span>
+                     </div>
+                  
+                     <p>We will send an email with registration instructions to follow</p>
+                     <div class="text-center">
+                     <button type="submit" class="btn btn-primary primary-button">Send Email</button>
+                     </div>
+               </ng-container>
+
+               <ng-template #confirmationMessage>
+                  <div class="text-center p-5 mt-3">
+                     <i class="fa-regular fa-circle-check fa-2xl fs-1 primary"></i>
+                     <h2 class="primary mt-3">Email Sent Successfully!</h2>
+                     <p>An email has been sent to your Email, follow the instructions to change your password correctly.</p>
+
+                     <button type="submit" class="btn btn-primary primary-button mt-5" routerLink="/auth/register">Back to Login</button>
+                  </div>
+
+
+               </ng-template>
+
+               </form>
+
+        
+        </div>
+
+
+     
+
+     </div>
+ </div>

@@ -1,0 +1,48 @@
+.login-button {
+    background-color: #3A57E8 ;
+    border-radius: 50px;
+}
+
+.img { 
+    background-image: url("./../../../assets/home-bg.jpg");
+    background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+    height: 60vh; 
+}
+
+.img-header {
+    position:sticky;
+    z-index: -1;
+    bottom: 378px;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.brand-text {
+    font-size: 50px;
+}
+
+.brand-button {
+    border-radius: 50px;
+}
+
+.text-secondary {
+    color: #6C757D;
+}
+
+.news-section {
+    background-color: #e9ecef ;
+}
+
+.bg-blue {
+    background-color: #223BB8;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+}

@@ -1,0 +1,59 @@
+<div class="row height-100">
+   <div class="col-md-6 p-5">
+      <div class="login-start p-5">
+         
+         <form [formGroup]="loginForm" (ngSubmit)="onSave()" class="p-5">
+            <div class="text-start d-flex align-items-center">
+               <a  class="navbar-brand primary" href="#">
+                  <img
+                    src="./../../../favicon.svg"
+                    alt=""
+                    width="60"
+                    height="60"
+                  />
+                <h3 class="d-inline">Jarvis</h3> 
+                  <!-- <h1 class="text-white">Logo</h1> -->
+                </a>
+            </div>
+            <div class="text-center">
+               <h2>Login</h2>
+            </div>
+            <div class="mb-3">
+              <label for="txtEmailOrID" class="form-label ">ID</label>
+              <input type="email" class="form-control border-primary" id="txtEmailOrID" formControlName="emailOrID">
+
+              <span *ngIf="isValidField('emailOrID')" class="form-text text-danger">
+               <!-- Debe de ser de 3 letras -->
+               {{getFieldError('emailOrID')}}
+           </span>
+            </div>
+            <div class="mb-3">
+              <label for="txtPassword" class="form-label">Password</label>
+              <input type="password" class="form-control border-primary" id="txtPassword" formControlName="password">
+
+              <span *ngIf="isValidField('password')" class="form-text text-danger">
+               <!-- Debe de ser de 3 letras -->
+               {{getFieldError('password')}}
+           </span>
+            </div>
+            <div class="row">
+               <div class="col mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+                </div>
+                <div class="col form-check text-end">
+                  <a href="">Olvide mi contraseña</a>
+                </div>
+            </div>
+           <div class="text-center">
+            <button type="submit" class="btn btn-primary primary-button  ">Sign in</button>
+            <p class="mt-2">Not part of the organization? <a routerLink="/auth/register">Join Us</a></p>
+           </div>
+          </form>
+      </div>
+   
+   </div>
+   <div class="col-md-6  d-flex justify-content-end height-100">
+      <img src="./../../../../assets/auth/01.png" class="w-100 h-100" alt="imglogin">
+   </div>
+</div>
