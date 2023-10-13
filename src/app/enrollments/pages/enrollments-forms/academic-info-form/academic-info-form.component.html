@@ -1,0 +1,31 @@
+
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="form-container">
+        
+        <form (submit)="onSubmit()">
+          <div class="mb-3">
+            <label for="email" class="form-label">Programa o carrera</label>
+            <input type="email" class="form-control" id="carreer" formControlName="carreer" required>
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Centro Educativo de Procedencia:</label>
+            <input type="text" class="form-control" id="school" formControlName="school" required>
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Tipo de candidato</label>
+            <input type="text" class="form-control" id="candidateType" formControlName="candidateType" required>
+          </div>
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Nivel academico</label>
+            <input type="text" class="form-control" id="academicLevel" formControlName="academicLevel" required>
+          </div>
+          <div class="d-grid gap-1">
+            <button class="btn btn-primary primary-button" type="submit">Guardar</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>

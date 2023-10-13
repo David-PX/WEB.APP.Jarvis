@@ -1,0 +1,99 @@
+
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="form-container">
+          
+          <form [formGroup]="basicInfoForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" required>
+
+              <span *ngIf="isValidField('email')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('email')}}
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name" formControlName="name" required>
+              <span *ngIf="isValidField('name')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('name')}}
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+              <span *ngIf="isValidField('lastName')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('lastName')}}
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="birthDate" class="form-label">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" id="birthDate" formControlName="birthDate" required>
+              <span *ngIf="isValidField('birthDate')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('birthDate')}}
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="gender" class="form-label">Género</label>
+              <select class="form-select" id="gender" formControlName="gender" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+              </select>
+
+              <span *ngIf="isValidField('gender')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('gender')}}
+              </span>
+            </div>
+            <!-- <div class="mb-3">
+              <label for="gender" class="form-label">Tipo de Identificación</label>
+              <select class="form-select" id="identificationType" formControlName="identificationType" required>
+                <option value="Masculino">Cedula</option>
+                <option value="Femenino">Pasaporte</option>
+              </select>
+
+              <span *ngIf="isValidField('identificationType')" class="form-text text-danger">
+                
+                {{getFieldError('identificationType')}}
+              </span>
+            </div> -->
+            <div class="mb-3">
+              <label for="identificationNumber" class="form-label">Número de Identificación</label>
+              <input type="text" class="form-control" id="identificationNumber" formControlName="identificationNumber" required>
+
+              <span *ngIf="isValidField('identificationNumber')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('identificationNumber')}}
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">Número de Teléfono</label>
+              <input type="tel" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+
+              <span *ngIf="isValidField('phoneNumber')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('phoneNumber')}}
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="mobileNumber" class="form-label">Número de Móvil</label>
+              <input type="tel" class="form-control" id="mobileNumber" formControlName="mobileNumber">
+
+              <span *ngIf="isValidField('mobileNumber')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('mobileNumber')}}
+              </span>
+            </div>
+            <div class="d-grid gap-1">
+              <button class="btn btn-primary primary-button" type="submit">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>

@@ -4,6 +4,11 @@
     --secondary-text: #6C757D;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
 
   .primary {
     color: var(--primary-blue);
@@ -18,4 +23,8 @@
   .primary-button:hover{
     background-color: #041a88;
     border-color: #041a88;
+  }
+
+  .dark-blue {
+    color: #232D42;
   }

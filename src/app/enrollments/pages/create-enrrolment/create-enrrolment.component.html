@@ -1,28 +1,65 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white custom-menu">
-    <div class="container">
-      <!-- Logo a la izquierda -->
-      <a  class="navbar-brand primary" href="#">
-        <img
-          src="./../../../favicon.svg"
-          alt=""
-          width="60"
-          height="60"
-        />
-      <p class="d-inline"><b>Jarvis</b> </p> 
-        <!-- <h1 class="text-white">Logo</h1> -->
-      </a>
 
-      <!-- <a class="navbar-brand" href="#">
-        <img src="tu-logo.png" alt="Logo" width="40">
-      </a> -->
-      <!-- Menú de navegación -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-     
-        </ul>
+
+<div class="bg-blue">
+
+  <div class="container pad d-flex justify-content-center">
+    <div class="form-container ">
+      <h3 class="mb-4">Formulario de Admision</h3>
+      <div class="d-flex justify-content-center">
+        <div class="card border" style="width: 50rem;">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link" id="basic-info-tab" routerLink="basic-info" routerLinkActive="active" aria-current="true" href="#">Informacion Basica</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="academic-info-tab" routerLink="academic-info" routerLinkActive="active">Informacion Academica</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" id="contact-info-tab" routerLink="contact-info" routerLinkActive="active">Contactos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="document-info-tab" routerLink="document-info" routerLinkActive="active">Documentos iniciales</a>
+              </li> -->
+            </ul>
+          </div>
+          <div class="card-body fixed-size">
+            <router-outlet/>
+          </div>
+          <!-- <div class="card-footer text-body-secondary">
+            <div class="d-grid gap-1">
+              <button class="btn btn-primary primary-button" type="submit">Guardar</button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+   
+    </div>
+  </div>
+
+  
+  <!-- <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="form-container">
+          <h2 class="text-center">Formulario de Inscripcion</h2>
+          <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="basic-info-tab" routerLink="basic-info" routerLinkActive="active">Información Básica</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="academic-info-tab" routerLink="academic-info" routerLinkActive="active">Información Academica</a>
+              </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-info-tab" routerLink="contact-info" routerLinkActive="active">Contactos Personales</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="document-info-tab" routerLink="document-info" routerLinkActive="active">Documentos</a>
+            </li>
+          </ul>
+          <router-outlet></router-outlet>
+        </div>
       </div>
     </div>
-  </nav>
+  </div> -->
+</div>
