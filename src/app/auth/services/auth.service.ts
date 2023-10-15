@@ -14,8 +14,24 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string) {
-    const body = { Email: username, Password: password };
-    return this.http.post(`${this.apiUrl}/Authentication/login`, body);
+    // Expresión regular para verificar si `username` es un correo electrónico
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    let body = null;
+
+    if (emailRegex.test(username)) {
+      // `username` parece ser un correo electrónico
+      body =  {
+        email: username,
+        password: password
+      };
+    } else {
+      // `username` parece ser un nombre de usuario
+      body =  {
+        id: username,
+        password: password
+      };
+    }
+    return this.http.post(`${this.apiUrl}/Authentication/login/student`, body);
   }
 
   sendEmail(email: string): Observable<any> {

@@ -1,11 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentLayoutComponent } from './pages/student-layout/student-layout.component';
+import { PensumReportComponent } from './pages/reports/pensum-report/pensum-report.component';
+import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
 
 const routes: Routes = [
   {
     path:'',
-    component:StudentLayoutComponent
+    component:StudentLayoutComponent,
+    children: [
+      {
+        path:'dashboard',
+        component:StudentDashboardComponent
+      },
+      {
+        path:'report/pensum',
+        component:PensumReportComponent
+      },
+      {
+        path:'**',
+        redirectTo:'dashboard'
+      }
+    ]
   },
   {
     path:'**',

@@ -20,13 +20,13 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // if(localStorage.getItem('token') != null){
-    //   this.router.navigate([''])
-    // }
+    if(localStorage.getItem('token') != null){
+      this.router.navigate(['/students/'])
+    }
   }
 
   public loginForm: FormGroup = this.fb.group({
-    emailOrID: ['', [Validators.required, Validators.email]],
+    emailOrID: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });
 
@@ -70,22 +70,18 @@ export class LoginComponent implements OnInit {
     return null;
   }
 
-  Login(email: string, password: string): void {
-    this.authService.login(email, password).subscribe(
+  Login(emailOrID: string, password: string): void {
+    this.authService.login(emailOrID, password).subscribe(
       (response: any) => {
         console.log(response);
         Swal.fire({
           icon: 'success',
           title: 'Inicio de sesión Exitoso',
-          text: `Bienvenido ${response.names}`,
+          text: `Bienvenido`,
         }).then(() => {
-          localStorage.setItem('id', response.id);
-          localStorage.setItem('userName', response.names);
-          localStorage.setItem('userLastName', response.lastnames);
-          localStorage.setItem('email', email);
-          localStorage.setItem('phoneNumber', response.phoneNumber);
+          localStorage.setItem('emailOrID', emailOrID);
           localStorage.setItem('token', response.token);
-          this.router.navigate(['/customer-site/main']);
+          this.router.navigate(['/students/']);
         });
         console.log(response);
       },
