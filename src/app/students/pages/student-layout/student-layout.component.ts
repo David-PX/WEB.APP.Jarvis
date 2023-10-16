@@ -28,6 +28,10 @@ export class StudentLayoutComponent implements OnInit {
     }
 
     
-
+    LogOut(){
+      localStorage.removeItem('token');
+      localStorage.removeItem('emailOrID');
+      this.router.navigate(['/auth/login']);
+    }
    
 }
