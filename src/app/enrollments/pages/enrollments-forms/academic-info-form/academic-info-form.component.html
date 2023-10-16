@@ -4,22 +4,61 @@
     <div class="col-md-8">
       <div class="form-container">
         
-        <form (submit)="onSubmit()">
+        <form [formGroup]="academicInfoForm" (submit)="onSubmit()">
+          <div class="mb-3" hidden>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email" required>
+
+            <span *ngIf="isValidField('email')" class="form-text text-danger">
+              <!-- Debe de ser de 3 letras -->
+              {{getFieldError('email')}}
+            </span>
+          </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Programa o carrera</label>
-            <input type="email" class="form-control" id="carreer" formControlName="carreer" required>
+            <label for="careerId" class="form-label">Carrera</label>
+              <select class="form-select" id="careerId" formControlName="careerId" required>
+                <option *ngFor="let career of careers" value="{{career.careerId}}">{{career.careerName}}</option>
+              </select>
+
+              <span *ngIf="isValidField('careerId')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('careerId')}}
+              </span>
           </div>
           <div class="mb-3">
             <label for="name" class="form-label">Centro Educativo de Procedencia:</label>
             <input type="text" class="form-control" id="school" formControlName="school" required>
+
+
+            <span *ngIf="isValidField('school')" class="form-text text-danger">
+              <!-- Debe de ser de 3 letras -->
+              {{getFieldError('school')}}
+            </span>
           </div>
           <div class="mb-3">
-            <label for="lastName" class="form-label">Tipo de candidato</label>
-            <input type="text" class="form-control" id="candidateType" formControlName="candidateType" required>
+            <label for="candidateType" class="form-label">Tipo de candidato</label>
+              <select class="form-select" id="candidateType" formControlName="candidateType" required>
+                <option value="Masculino">Extranjero</option>
+                <option value="Femenino">Local</option>
+              </select>
+
+              <span *ngIf="isValidField('candidateType')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('candidateType')}}
+              </span>
           </div>
           <div class="mb-3">
-            <label for="lastName" class="form-label">Nivel academico</label>
-            <input type="text" class="form-control" id="academicLevel" formControlName="academicLevel" required>
+
+            <label for="academicLevel" class="form-label">Nivel academico</label>
+              <select class="form-select" id="academicLevel" formControlName="academicLevel" required>
+                <option value="Bachiller">Bachiller</option>
+                <option value="Tecnico">Tecnico</option>
+              </select>
+
+              <span *ngIf="isValidField('academicLevel')" class="form-text text-danger">
+                <!-- Debe de ser de 3 letras -->
+                {{getFieldError('academicLevel')}}
+              </span>
           </div>
           <div class="d-grid gap-1">
             <button class="btn btn-primary primary-button" type="submit">Guardar</button>
