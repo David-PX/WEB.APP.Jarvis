@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentLayoutComponent } from './pages/student-layout/student-layout.component';
 import { PensumReportComponent } from './pages/reports/pensum-report/pensum-report.component';
 import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
+import { SubjectsSelectionComponent } from './pages/subjects-selection/subjects-selection.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path:'report/pensum',
         component:PensumReportComponent
+      },
+      {
+        path:'selection',
+        component:SubjectsSelectionComponent
       },
       {
         path:'**',

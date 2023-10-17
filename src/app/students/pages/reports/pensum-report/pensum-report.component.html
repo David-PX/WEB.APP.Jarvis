@@ -8,7 +8,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <h5 class="m-3">Trimestre 1</h5>
+                    <h5 class="m-3">Trimestre: 1</h5>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -24,50 +24,23 @@
                              
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="">
+                        <tbody *ngFor="let pensumSubjects of pensum;">
+                            <tr class="" *ngFor="let pensumSubject of pensumSubjects.pensumSubjects">
                                 <td class="">
+                                    {{pensumSubject.subject.subjectId}}
                                    
                                 </td>
                                 <td class="text-center">
+                                    {{pensumSubject.subject.subjectName}}
                                 </td>
                                 <td class="text-center">
-                                </td>
-                             
-                            </tr>
-                        </tbody>
-                    </table>
+                                    {{pensumSubject.subject.credits}}
 
-                    <h5 class="m-3">Trimestre 2</h5>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>
-                                    ID
-                                </th>
-                                <th class="text-center">
-                                   Asignatura
-                                </th>
-                                <th class="text-center">
-                                  Creditos
-                                </th>
-                             
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="">
-                                <td class="">
-                                   
-                                </td>
-                                <td class="text-center">
-                                </td>
-                                <td class="text-center">
                                 </td>
                              
                             </tr>
                         </tbody>
                     </table>
-                 
                 </div>
             </div>
         </div>

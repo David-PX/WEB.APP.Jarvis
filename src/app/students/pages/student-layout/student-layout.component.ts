@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class StudentLayoutComponent implements OnInit {
 
-     userName: string = "";
+     userName: string = "Estudiante";
      student: Student | undefined;
   
      constructor(private studentService: StudentService, private router: Router) {}
