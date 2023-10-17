@@ -1,1 +1,27 @@
-<p>subjects-selection works!</p>
+<div class="card-body">
+    <div  class="table-responsive">
+<table class="table table-bordered px-4">
+    <thead>
+      <tr>
+        <th>Materia</th>
+        <th>Profesor</th>
+        <th>Seleccionar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let section of all">
+        <td>{{ section.subject.subjectName }}</td>
+        <td>{{ section.teacher.userId}}</td>
+
+        <td>
+            <button class="btn btn-primary" (click)="onSelectSubject(section.subject.subjectName, section.teacher.userId)">Seleccionar</button>
+        </td>
+
+      </tr>
+    </tbody>
+  
+  </table>
+</div>
+</div>
+
+

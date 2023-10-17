@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Student } from '../interfaces/student';
 import { Pensum } from '../interfaces/pensum';
+import { Section, Teacher, selectionSubject } from '../interfaces/section';
 
 @Injectable({
   providedIn: 'root'
@@ -27,4 +28,19 @@ export class StudentService {
     console.log(url);
     return this.httpClient.get<Pensum[]>(url);
   }
+
+    // Realiza una solicitud GET para obtener los datos de profesores, asignaturas y secciones.
+    getUniversityData(): Observable<any> {
+      const url = `${this.baseUrl}/Sections`; // Reemplaza con la ruta real de tu API
+      return this.httpClient.get<any>(url);
+    }
+  
+    // Realiza una solicitud POST para seleccionar una materia por parte de un estudiante.
+    selectSubject(studentId: string, sectionId: string): Observable<any> {
+      const url = `${this.baseUrl}/sectionstudents`; // Reemplaza con la ruta real de tu API
+      const payload = { SectionId: sectionId, StudentId: studentId  };
+      return this.httpClient.post(url, payload);
+    }
+
+
 }

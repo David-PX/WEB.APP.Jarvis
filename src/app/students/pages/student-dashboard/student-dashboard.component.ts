@@ -13,11 +13,18 @@ export class StudentDashboardComponent implements OnInit {
   constructor(private studentService: StudentService, private router: Router) {}
 
 
+  materia: string = "";
+  profesor: string = "";
+
   ngOnInit(): void {
     if(localStorage.getItem('token') == null){
       this.router.navigate(['/auth/login'])
         }    
-      }
+
+    this.materia = localStorage.getItem('materia')!;
+    this.profesor = localStorage.getItem('profesor')!;
+
+  }
 
 
 }
